@@ -1,9 +1,10 @@
 import { Request, Response } from "express";
+import { UserService } from "../services/UserServices";
 
 class UserController {
   constructor() {}
-  getUsers(req: Request, res: Response) {
-    res.json({ message: "get ALl User" });
+  async getUsers(req: Request, res: Response) {
+    res.json(await UserService.getUsers());
   }
   getUser(req: Request, res: Response) {
     res.json({ message: "get a User" });

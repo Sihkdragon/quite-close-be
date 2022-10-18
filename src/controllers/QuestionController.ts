@@ -1,9 +1,10 @@
 import { Request, Response } from "express";
+import { UserService } from "../services/UserServices";
 
 class QuestionController {
   constructor() {}
   static getQuestions(req: Request, res: Response) {
-    res.json({ message: "get ALl Question" });
+    res.json(UserService.getUsers);
   }
   static getQuestion(req: Request, res: Response) {
     res.json({ message: "get a Question" });
